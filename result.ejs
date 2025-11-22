@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Submitted Data</title>
+
+    <style>
+        /* ---- Page Background ---- */
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #0052d4, #43c7f7cf, #6ffcd6d8);
+            padding: 40px 0;
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+        }
+
+        /* ---- Animation ---- */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(25px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* ---- Center Container ---- */
+        .container {
+            width: 650px;
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(10px);
+            padding: 30px;
+            border-radius: 18px;
+            box-shadow: 0px 8px 25px rgba(0,0,0,0.25);
+            animation: fadeIn 0.7s ease-out;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #003c9d;
+            font-size: 26px;
+            font-weight: 700;
+        }
+
+        /* ---- Table Styling ---- */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0px 4px 12px rgba(0,0,0,0.15);
+        }
+
+        th {
+            background: #0052d4;
+            color: white;
+            padding: 14px;
+            font-size: 15px;
+            text-transform: capitalize;
+        }
+
+        td {
+            padding: 14px;
+            font-size: 14.5px;
+            background: #ffffffcc;
+        }
+
+        tr:nth-child(even) td {
+            background: #f0f5ff;
+        }
+
+        tr:hover td {
+            background: #d8e6ff;
+            transition: 0.3s;
+        }
+
+        /* ---- Back Button ---- */
+        a {
+            display: block;
+            width: 180px;
+            margin: 25px auto 0;
+            text-align: center;
+            text-decoration: none;
+            background: #0052d4;
+            padding: 14px;
+            color: white;
+            font-weight: bold;
+            border-radius: 8px;
+            font-size: 15px;
+            transition: 0.3s;
+            box-shadow: 0px 4px 12px rgba(0,0,0,0.2);
+        }
+
+        a:hover {
+            background: #003c9d;
+            transform: scale(1.05);
+        }
+    </style>
+
+</head>
+<body>
+
+<div class="container">
+    <h2>Submitted Student Information</h2>
+
+    <table>
+        <% for (const key in data) { %>
+            <tr>
+                <th><%= key %></th>
+                <td><%= data[key] %></td>
+            </tr>
+        <% } %>
+    </table>
+
+    <a href="/">⬅ Go Back</a>
+</div>
+
+</body>
+</html>
